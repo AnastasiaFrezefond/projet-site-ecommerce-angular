@@ -1,0 +1,19 @@
+nav{
+  background-color: #0C6291;
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+nav ul{
+	  display: flex;
+    justify-content:space-around;
+}
+nav ul li a{
+    color: white;
+    width: 80px;
+    margin: 10px;
+}
+nav ul li a:hover{
+    color: pink;
+}
+

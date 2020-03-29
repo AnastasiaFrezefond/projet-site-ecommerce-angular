@@ -4,28 +4,20 @@ import { HttpClient } from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
+export class UserListService {
 
-export class ArticleListService {
-
-  url = "https://quiet-spire-38494.herokuapp.com/articles";
+  url = "https://quiet-spire-38494.herokuapp.com/utilisateurs";
 
   constructor(private http : HttpClient) { }
 
-  getAllArticles()
+  getAllUtilisateurs()
   {
     return this.http.get(this.url);
   }
 
-  getArticleById(id)
+  getUtilisateurById(id)
   {
     return this.http.get(this.url+"/"+id);
   }
-
-  createArtcile(article)
-  {
-    return this.http.post(this.url+"/",article);
-  }
-
-
 
 }

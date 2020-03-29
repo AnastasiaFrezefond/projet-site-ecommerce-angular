@@ -1,9 +1,58 @@
-<div class="row mt-3">
-  <article class="col-6" *ngFor="let article of articles">
-      <h2>{{article.titre}}</h2>
-      <p>{{article.contenu}}</p>
-      <p>
-          <a [routerLink]="['/article', article._id]" class="btn btn-primary"> Read More</a>
-      </p>
-  </article>
+
+<!---- Section 1 /  Notre idée et introduction ---->
+
+<div class="row">
+    <div class="col-md-12 offset-md-1 alert alert">
+        <div class="card" style="padding:30px;">
+            <h2><i class="contact far fa-lightbulb"></i> Notre idée pour combattre l'isolement ! <i class="far fa-lightbulb"></i></h2>
+            <p> En proposant des rassemblements (petits ou grands). Le but : mixer les origines, les genre, les âges...</p>
+                <ul>
+                    <li> Restaurer le lien qui existe entre les générations </li>
+                    <li> Apporter un peu de réconfort à ceux qui souffrent en silence </li>
+                    <li> Prendre en compte les difficultés d'autrui et dire non à l'exclusion </li>
+                    <li> Prendre en compte l'avenir des plus jeunes de notre société </li>
+                </ul>
+            <a href="https://www.fondationdefrance.org/sites/default/files/atoms/files/solitudes142.pdf" type="button" class="btn btn-lg btn-outline-info"> Baromètre « Les Solitudes en France » </a>
+        </div>
+    </div>
+</div>
+
+<!---- Section 2 / les offres (articles) ---->
+
+<div class="row">
+
+    <article class="card md-3" id="articles" *ngFor="let article of articles">
+        <h2 class="titrearticle">{{article.titre}}</h2>
+        <h3 class="prix">{{article.prix}}</h3>
+        <img src="../../../assets/{{article.img}}" alt="">
+        <p class="infoarticle">{{article.contenu}}</p>
+
+        <p>
+            <a [routerLink]="['/article', article._id]" class="btn btn-info"> En savoir plus </a>
+        </p>
+    </article>
+
+  </div>
+
+
+<!---- Section 3 / plus d'informations ---->
+
+ <div class="row" id="row-1">
+
+    <div class="col-md-6 alert alert bg--darkgrey">
+        <div class="card" style="padding:30px; text-align: center;">
+            <h2> Qui sommes nous ?  <i class="far fa-grin-hearts"></i></h2>
+            <p> Dans une société ultra connectée nous n’avons jamais été aussi seuls. Près de cinq millions de Français sont en situation d’isolement relationnel, en marge ou à l’écart des grands réseaux – familial, amical, professionnel, de voisinage et affinitaire – qui garantissent la sociabilité. Les personnes âgées, dont la situation s’est fortement altérée depuis notre premier panorama de 2010, sont les premières touchées. </p>
+            <a href="https://www.zalando.fr" type="button" class="btn btn-lg btn-outline-info"> Success stories </a>
+         </div>
+    </div>
+
+    <div class="col-md-6 alert alert">
+        <div class="card" style="padding:30px; text-align: center;">
+            <h2> Deviens acteur ! <i class="fab fa-angellist"></i></h2>
+            <p> Portées par des associations qui agissent dans des domaines variés – emploi, enfance, grand âge... –, ces initiatives permettent à chacun de retrouver une place dans la société. C’est avec confiance et dignité que les bénéficiaires, placés au centre des actions qui les concernent, peuvent reprendre leur vie en main. Ces projets offrent la possibilité à chacun de vivre dans un environnement le plus « ouvert » possible. </p>
+            <a href="www.google.fr" type="button" class="btn btn-lg btn-outline-info"> Rejoins nous ! </a>
+        </div>
+    </div>
+
 </div>
