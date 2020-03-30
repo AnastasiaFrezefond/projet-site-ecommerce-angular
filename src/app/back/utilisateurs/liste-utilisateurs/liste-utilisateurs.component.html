@@ -7,7 +7,7 @@
     <div class="col-8">
         <h1> Gestion des utilisateurs : </h1>
         <div>
-            <a routerLink="/admin/article/ajouter" class="btn btn-primary">Ajouter un utilisateur </a>
+            <a routerLink="/admin/utilisateur/ajouter" class="btn btn-primary">Ajouter un utilisateur </a>
         </div>
 
         <table class="table table-stripped mt-3">
@@ -15,12 +15,13 @@
                 <tr *ngFor="let utilisateur of utilisateurs">
                     <td>
                         {{ utilisateur._id }}
+                        {{ utilisateur.email }}
                     </td>
                     <td>
-                        <a href="/" class="btn btn-warning">Modifier</a>
+                        <a routerLink="/admin/utilisateur/modifier" class="btn btn-warning">Modifier</a>
                     </td>
                     <td>
-                        <a href="/" class="btn btn-danger"> Supprimer </a>
+                        <a routerLink="/admin/utilisateur/supprimer" class="btn btn-danger"> Supprimer </a>
                     </td>
                 </tr>
             </tbody>

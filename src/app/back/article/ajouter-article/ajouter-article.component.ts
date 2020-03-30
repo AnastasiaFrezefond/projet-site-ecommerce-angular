@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 
 export class AjouterArticleComponent implements OnInit {
 
-  _articles;
+  private _articles;
   articleListe;
 
   // J'injecte mon service ArticleListService
@@ -18,25 +18,52 @@ export class AjouterArticleComponent implements OnInit {
     this.articleListe = service.getAllArticles();
   }
 
-  ngOnInit(): void {
-    // J'appelle la méthode getAllArticles() que j'ai défini dans mon service ts
-    // initialisation de ma variable _articles déclarée en haut
-    this.service.getAllArticles().subscribe((response: Response) => {
-    this._articles = response;
-    });
-  }
+    // Afficher les articles
+    ngOnInit() {
+      this.service.getAllArticles()
+      .subscribe( (response : Response) => {
+        //console.log(response)
+        this._articles = response ;
+      });
+    }
 
-  onSubmitArticle(f){
+    // Créer un nouvel article
+    onSubmitArticle(f)
+    {
+    //console.log(f.value)
     const article = f.value;
-    this.service.createArticle(article).subscribe((res: Response) => {
-      article["_id"] = res["_id"];
-      this._articles.splice(0, 0, article);
-    });
+    this.service.createArticle(article)
+      .subscribe((response : Response) => {
+        // que f.value soit conforme ou pas  => toujours OK avec JSONPlaceholder
+        // console.log(response);
+        article["id"] = response['id']
+        this._articles.splice(0,0,article) ;
+      })
+    }
+
+    // Supprimer article
+    onDeleteArticle(article)
+    {
+    this.service.deleteArticle(article.id)
+      .subscribe((response : Response) => {
+        // que article soit conforme ou pas  => toujours OK avec JSONPlaceholder
+
+        console.log(response);
+        let index = this._articles.indexOf(article);
+        this._articles.splice(index,1) ;
+      })
   }
 
-  fresetForm(){
-    this.router.navigate(["/admin/article"]);
-    this.ngOnInit();
-  }
+    // Update
+    onUpdateArticle(article)
+    {
+      this.service.updateArticle(article)
+        .subscribe((response : Response) => {
+          // que article soit conforme ou pas  => toujours OK avec JSONPlaceholder
+          // par contre pas si vous essayer de modifier un article créé par vous => erreur 500
+          console.log(response);
+          article.title = article.title + " Modifié!";
+        })
+    }
 
 }

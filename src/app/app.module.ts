@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { HttpClientModule} from '@angular/common/http';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +30,8 @@ import { ModifierArticleComponent } from './back/article/modifier-article/modifi
 // imports des composants utilisateurs back office
 import { AjouterUtilisateurComponent } from './back/utilisateurs/ajouter-utilisateur/ajouter-utilisateur.component';
 import { ListeUtilisateursComponent } from './back/utilisateurs/liste-utilisateurs/liste-utilisateurs.component';
+import { ModifierUtilisateurComponent } from './back/utilisateurs/modifier-utilisateur/modifier-utilisateur.component';
+import { SupprimerUtilisateurComponent } from './back/utilisateurs/supprimer-utilisateur/supprimer-utilisateur.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,9 @@ import { ListeUtilisateursComponent } from './back/utilisateurs/liste-utilisateu
     SupprimerArticleComponent,
     ModifierArticleComponent,
     AjouterUtilisateurComponent,
-    ListeUtilisateursComponent
+    ListeUtilisateursComponent,
+    ModifierUtilisateurComponent,
+    SupprimerUtilisateurComponent
   ],
 
   imports: [
@@ -52,13 +58,17 @@ import { ListeUtilisateursComponent } from './back/utilisateurs/liste-utilisateu
     RouterModule.forRoot(
       [
         { path : "" , component : AccueilComponent},
-
         { path : "article/:id" , component : ArticleComponent},
+
         { path : "admin/article/liste" , component : ListeArticlesComponent},
         { path : "admin/article/ajouter" , component : AjouterArticleComponent},
+        { path : "admin/article/modifier" , component : ModifierArticleComponent},
+        { path : "admin/article/supprimer" , component : SupprimerArticleComponent},
 
         { path : "admin/utilisateur/liste" , component : ListeUtilisateursComponent},
         { path : "admin/utilisateur/ajouter" , component : AjouterUtilisateurComponent},
+        { path : "admin/utilisateur/modifier" , component : ModifierUtilisateurComponent},
+        { path : "admin/utilisateur/supprimer" , component : SupprimerUtilisateurComponent},
 
         { path : "admin" , component : DashboardComponent }
       ]
