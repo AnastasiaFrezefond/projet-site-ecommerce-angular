@@ -1,39 +1,26 @@
-<div class="row mt-3">
-
-    <div class="col-4">
-        <app-menu-dashboard></app-menu-dashboard>
-    </div>
-
-    <div class="col-8">
-
-        <h1> Paramètres du site : </h1>
-
-        <form #f="ngForm">
-
-          <div class="form-group">
-            <label> Nombre d'article page d'accueil </label>
-            <input type="textarea" ngModel name="" class="form-control">
-          </div>
-
-          <div class="form-group">
-            <label> Balise SEO </label>
-            <input type="email" ngModel name="" class="form-control">
-          </div>
-
-          <div class="form-group">
-            <label> Texte d'introduction </label>
-            <input type="textarea" ngModel name="" class="form-control">
-          </div>
-
-          <div class="form-group">
-              <label> Titre de la page d'accueil </label>
-              <input type="textarea" ngModel name="" class="form-control">
-          </div>
-
-          <button type="submit" class="btn btn-primary"> OK </button>
-
-        </form>
-
-    </div>
-
+<div class="row mt-3"><!--début de la div class=row-->
+  <div class="col-4">
+      <app-menu-dashboard></app-menu-dashboard>
   </div>
+  <div class= "col-md-8">
+    <form><!--début du formulaire-->
+          <div class="form-group">
+              <label for="baliseSeoMeta" style="color : white">Balise SEO title/ meta description</label>
+              <input type="email" class="form-control"  placeholder="Cuisine faite maison en livraison à domicile pour évenement ou autre">
+          </div>
+          <div class="form-group">
+              <label for="nombreArticles" style="color : white">Nombre d'articles</label>
+              <select class="form-control">
+                <option>4</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="texteIntroduction" style="color : white">Texte d'introduction</label>
+              <textarea class="form-control"  rows="5" placeholder="La cuisine de fakhita, prépare et organise pour vous des plats et plateaux maison salées,sucrées, verrines.Parce que vous n'avez pas le temps, et rechercher les saveurs du fait maison sur mesure ? nous sommes à l'écoute de vos choix, n'hésitez pas à nous contacter nous vous répondrons dans les plus brefs délais ."></textarea>
+          </div>
+          <div class="form-group">
+              <label for="titrePageAccueil" style="color : white">Titre de la page d'accueil</label>
+              <textarea class="form-control"  rows="3" placeholder="La cuisine de Fakhita"></textarea>
+          </div>
+      </form><!--fin du formulaire-->
+</div><!--fin de la div class=row-->
