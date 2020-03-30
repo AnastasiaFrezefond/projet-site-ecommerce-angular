@@ -18,25 +18,25 @@ export class ParamListService {
     return this.http.get(this._url);
   }
 
-  // Récupérer un article
+  // Récupérer un paramètre
   getParamById(id)
   {
     return this.http.get(this._url+"/"+id);
   }
 
-  // Ajouter un nouvel article
+  // Ajouter un nouveau paramètre
   createParam(post)
   {
     return this.http.post(this._url,JSON.stringify(post));
   }
 
-  // Supprimer un article
+  // Supprimer un paramètre
   deleteParam(id)
   {
     return this.http.delete(this._url + `/${id}`);
   }
 
-  // Mettre à jour un article
+  // Mettre à jour un paramètre
   updateParam(post)
   {
   return this.http.put(this._url + `/${post.id}`,JSON.stringify(post));

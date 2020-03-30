@@ -12,31 +12,31 @@ export class CommentairesService {
 
   // On va lister nos différentes méthodes :
 
-    // Récupérer tous les utilisateurs
+    // Récupérer tous les commentaires
     getAllCommentaires()
     {
       return this.http.get(this._url);
     }
 
-    // Récupérer un utilisateur
+    // Récupérer un commentaire
     getCommentaireById(id)
     {
       return this.http.get(this._url+"/"+id);
     }
 
-    // Ajouter un nouvel utilisateur
+    // Ajouter un nouveau commentaire
     createCommentaire(post)
     {
       return this.http.post(this._url,JSON.stringify(post));
     }
 
-    // Supprimer un utilisateur
+    // Supprimer un commentaire
     deleteCommentaire(id)
     {
       return this.http.delete(this._url + `/${id}`);
     }
 
-    // Mettre à jour un utilisateur
+    // Mettre à jour un commentaire
     updateCommentaire(post)
     {
     return this.http.put(this._url + `/${post.id}`,JSON.stringify(post));

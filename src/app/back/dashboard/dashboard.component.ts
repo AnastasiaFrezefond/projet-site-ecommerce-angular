@@ -20,7 +20,12 @@ export class DashboardComponent implements OnInit {
   commentaires;
   nbCommentaires;
 
-  constructor(private articleService : ArticleListService, private utilisateurService : UserListService, private parametreService : ParamListService, private commentaireService : CommentairesService) { }
+  constructor(
+    private articleService : ArticleListService,
+    private utilisateurService : UserListService,
+    private parametreService : ParamListService,
+    private commentaireService : CommentairesService
+  ) { }
 
   ngOnInit(): void {
 

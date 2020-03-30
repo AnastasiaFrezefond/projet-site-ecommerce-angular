@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
 import { ArticleListService } from "../../services/articles/article-list.service";
-
+import { CommentairesService } from "../../services/commentaires/commentaires.service";
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -14,8 +14,9 @@ export class ArticleComponent implements OnInit {
 
   constructor(
       private router : ActivatedRoute ,
-      private service : ArticleListService)
-  { }
+      private service : ArticleListService,
+      private commentaireService : CommentairesService
+  ){ }
 
   ngOnInit(): void {
 
@@ -29,5 +30,6 @@ export class ArticleComponent implements OnInit {
         console.log(this.article);
       })
     })
+
   }
 }
