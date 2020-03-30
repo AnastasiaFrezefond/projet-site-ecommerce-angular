@@ -33,6 +33,9 @@ import { ListeUtilisateursComponent } from './back/utilisateurs/liste-utilisateu
 import { ModifierUtilisateurComponent } from './back/utilisateurs/modifier-utilisateur/modifier-utilisateur.component';
 import { SupprimerUtilisateurComponent } from './back/utilisateurs/supprimer-utilisateur/supprimer-utilisateur.component';
 
+// iports du composant paramètres
+import { ParametresComponent } from './back/parametres/parametres.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +51,8 @@ import { SupprimerUtilisateurComponent } from './back/utilisateurs/supprimer-uti
     AjouterUtilisateurComponent,
     ListeUtilisateursComponent,
     ModifierUtilisateurComponent,
-    SupprimerUtilisateurComponent
+    SupprimerUtilisateurComponent,
+    ParametresComponent
   ],
 
   imports: [
@@ -69,6 +73,8 @@ import { SupprimerUtilisateurComponent } from './back/utilisateurs/supprimer-uti
         { path : "admin/utilisateur/ajouter" , component : AjouterUtilisateurComponent},
         { path : "admin/utilisateur/modifier" , component : ModifierUtilisateurComponent},
         { path : "admin/utilisateur/supprimer" , component : SupprimerUtilisateurComponent},
+
+        { path : "admin/parametres", component : ParametresComponent},
 
         { path : "admin" , component : DashboardComponent }
       ]

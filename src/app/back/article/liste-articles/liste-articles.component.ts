@@ -19,4 +19,3 @@ export class ListeArticlesComponent implements OnInit {
   }
 
 }
-

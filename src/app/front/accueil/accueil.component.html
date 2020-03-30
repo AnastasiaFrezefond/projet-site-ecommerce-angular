@@ -21,7 +21,7 @@
 
 <div class="row">
 
-    <article class="card md-3" id="articles" *ngFor="let article of articles">
+    <article class="card md-3" id="articles" *ngFor="let article of articles, index as i">
         <h2 class="titrearticle">{{article.titre}}</h2>
         <h3 class="prix">{{article.prix}}</h3>
         <img src="../../../assets/{{article.img}}" alt="">

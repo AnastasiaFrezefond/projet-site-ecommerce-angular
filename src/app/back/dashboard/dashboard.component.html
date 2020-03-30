@@ -1,16 +1,38 @@
 
 <div class="row mt-3">
 
-  <div class="col-3">
+  <div class="col-4">
       <app-menu-dashboard></app-menu-dashboard>
   </div>
 
-  <div class="col-6">
+  <div class="col-8">
       <h1> Bienvenue dans le back office ! </h1>
-  </div>
+      <span> 📊📊📊📊📊📊📊📊📊📊📊📊 </span>
 
-  <div class="card col-3">
-      <h2 class="card-header"> Statistiques </h2>
+      <h2 class="table-header"> Nos statistiques : </h2>
+
+          <div class="table-responsive">
+            <table class="table table-info table-stripped table-bordered">
+              <thead>
+                <tr>
+                  <th class="text-center"> Nombres articles </th>
+                  <th class="text-center"> Nombres utilisateurs </th>
+                  <th class="text-center"> Nombres commentaires </th>
+                  <th class="text-center"> Nombres paramètres </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center"> {{ nbArticles }} </td>
+                  <td class="text-center"> {{ nbUtilisateurs }} </td>
+                  <td class="text-center"> {{ nbParametres }} </td>
+                  <td class="text-center"> TBC </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
   </div>
 
 </div>
