@@ -13,7 +13,7 @@ export class AjouterArticleComponent implements OnInit {
   _articles;
   articleListe;
 
-  // J'injecte mon service et je le nomme ArticleListService
+  // J'injecte mon service ArticleListService
   constructor(private service: ArticleListService, private router: Router) {
     this.articleListe = service.getAllArticles();
   }

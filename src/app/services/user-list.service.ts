@@ -20,4 +20,9 @@ export class UserListService {
     return this.http.get(this.url+"/"+id);
   }
 
+  createUtilisateur(post) {
+    return this.http.post(this.url+"/", post);
+  }
+
+
 }
