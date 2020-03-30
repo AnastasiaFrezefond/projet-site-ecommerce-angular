@@ -21,11 +21,8 @@ export class ArticleListService {
     return this.http.get(this.url+"/"+id);
   }
 
-  createArtcile(article)
-  {
-    return this.http.post(this.url+"/",article);
+  createArticle(post) {
+    return this.http.post(this.url+"/", post);
   }
-
-
 
 }
