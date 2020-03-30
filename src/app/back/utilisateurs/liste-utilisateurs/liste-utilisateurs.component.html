@@ -5,20 +5,16 @@
     </div>
 
     <div class="col-8">
-        <h1> Gestion des articles </h1>
+        <h1> Gestion des utilisateurs : </h1>
         <div>
-            <a routerLink="/admin/article/ajouter" class="btn btn-primary">Ajouter un article</a>
+            <a routerLink="/admin/article/ajouter" class="btn btn-primary">Ajouter un utilisateur </a>
         </div>
 
         <table class="table table-stripped mt-3">
             <tbody>
-                <tr *ngFor="let article of articles">
+                <tr *ngFor="let utilisateur of utilisateurs">
                     <td>
-                        {{ article._id }}
-                        {{ article.titre }}
-                        {{ article.nomAuteur }}
-                        {{ article.published }}
-                        {{ article.dateCreation }}
+                        {{ utilisateur._id }}
                     </td>
                     <td>
                         <a href="/" class="btn btn-warning">Modifier</a>
