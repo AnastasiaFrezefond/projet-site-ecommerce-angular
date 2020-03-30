@@ -14,8 +14,9 @@ import { AccueilComponent } from './front/accueil/accueil.component';
 import { ArticleComponent } from './front/article/article.component';
 
 // imports de nos différents services
-import { ArticleListService } from "./services/article-list.service";
-import { UserListService } from "./services/user-list.service";
+import { ArticleListService } from "./services/articles/article-list.service";
+import { UserListService } from "./services/utilisateurs/user-list.service";
+import { ParamListService } from "./services/parametres/param-list.service";
 
 // imports des composants menu back office
 import { DashboardComponent } from './back/dashboard/dashboard.component';
@@ -33,7 +34,7 @@ import { ListeUtilisateursComponent } from './back/utilisateurs/liste-utilisateu
 import { ModifierUtilisateurComponent } from './back/utilisateurs/modifier-utilisateur/modifier-utilisateur.component';
 import { SupprimerUtilisateurComponent } from './back/utilisateurs/supprimer-utilisateur/supprimer-utilisateur.component';
 
-// iports du composant paramètres
+// imports du composant paramètres
 import { ParametresComponent } from './back/parametres/parametres.component';
 
 @NgModule({
@@ -81,7 +82,7 @@ import { ParametresComponent } from './back/parametres/parametres.component';
     ),
     HttpClientModule
   ],
-  providers: [ArticleListService, UserListService],
+  providers: [ArticleListService, UserListService, ParamListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

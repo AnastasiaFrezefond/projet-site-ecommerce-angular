@@ -22,14 +22,18 @@
 <div class="row">
 
     <article class="card md-3" id="articles" *ngFor="let article of articles, index as i">
+
+      <div *ngIf="i<5">
         <h2 class="titrearticle">{{article.titre}}</h2>
         <h3 class="prix">{{article.prix}}</h3>
         <img src="../../../assets/{{article.img}}" alt="">
-        <p class="infoarticle">{{article.contenu}}</p>
+        <p class="infoarticle">{{ article.contenu }}</p>
 
         <p>
             <a [routerLink]="['/article', article._id]" class="btn btn-info"> En savoir plus </a>
         </p>
+      </div>
+
     </article>
 
   </div>

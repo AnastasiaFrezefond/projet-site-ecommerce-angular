@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleListService } from "../../../services/article-list.service";
+import { ArticleListService } from "../../../services/articles/article-list.service";
 import { Router } from "@angular/router";
 
 @Component({

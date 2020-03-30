@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserListService } from "../../services/user-list.service";
-import { ArticleListService } from "../../services/article-list.service";
-import { ParamListService } from "../../services/param-list.service";
+import { UserListService } from "../../services/utilisateurs/user-list.service";
+import { ArticleListService } from "../../services/articles/article-list.service";
+import { ParamListService } from "../../services/parametres/param-list.service";
+import { CommentairesService } from "../../services/commentaires/commentaires.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -16,21 +17,28 @@ export class DashboardComponent implements OnInit {
   nbUtilisateurs;
   parametres;
   nbParametres;
+  commentaires;
+  nbCommentaires;
 
-  constructor(private articleService : ArticleListService, private utilisateursService : UserListService, private parametreService : ParamListService) { }
+  constructor(private articleService : ArticleListService, private utilisateurService : UserListService, private parametreService : ParamListService, private commentaireService : CommentairesService) { }
 
   ngOnInit(): void {
 
     this.articleService.getAllArticles().subscribe((res: Response) => {
-      this.articles = res;
-      this.nbArticles = this.articles.length; });
+        this.articles = res;
+        this.nbArticles = this.articles.length; });
 
-    this.utilisateursService.getAllUtilisateurs().subscribe((res: Response) => {
+    this.utilisateurService.getAllUtilisateurs().subscribe((res: Response) => {
         this.utilisateurs = res;
         this.nbUtilisateurs = this.utilisateurs.length; });
 
     this.parametreService.getAllParams().subscribe((res: Response) => {
         this.parametres = res;
         this.nbParametres = this.parametres.length; });
-}
+
+    this.commentaireService.getAllCommentaires().subscribe((res: Response) => {
+        this.commentaires = res;
+        this.nbCommentaires = this.commentaires.length; });
+  }
+
 }
