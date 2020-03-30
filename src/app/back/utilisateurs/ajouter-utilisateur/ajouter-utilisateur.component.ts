@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserListService } from "../../../services/utilisateurs/user-list.service";
+import { FormBuilder } from '@angular/forms';
 import { Router } from "@angular/router";
 
 @Component({
@@ -9,33 +10,24 @@ import { Router } from "@angular/router";
 })
 export class AjouterUtilisateurComponent implements OnInit {
 
-  _utilisateurs;
-  utilisateurListe;
+  utilisateurForm;
 
   // J'injecte mon service UserListService
-  constructor(private service: UserListService , private router: Router) {
-    this.utilisateurListe = service.getAllUtilisateurs();
-  }
+  constructor(
+    private service: UserListService,
+    private router: Router,
+    private formBuilder : FormBuilder){}
 
-  ngOnInit(): void {
-    // J'appelle la méthode getAllArticles() que j'ai défini dans mon service ts
-    // initialisation de ma variable _articles déclarée en haut
-    this.service.getAllUtilisateurs().subscribe((response: Response) => {
-    this._utilisateurs = response;
-    });
-  }
+  ngOnInit() {}
 
   onSubmitUtilisateurs(f){
-    const utilisateur = f.value;
-    this.service.createUtilisateur(utilisateur).subscribe((res: Response) => {
-      utilisateur["_id"] = res["_id"];
-      this._utilisateurs.splice(0, 0, utilisateur);
-    });
-  }
-
-  fresetForm(){
-    this.router.navigate(["/admin/utilisateur"]);
-    this.ngOnInit();
-  }
+    const article = f;
+    console.log(f)
+    this.service.createUtilisateur(f)
+      .subscribe((response : Response) => {
+        // console.log(response);
+        article["id"] = response['id']
+      })
+    }
 
 }

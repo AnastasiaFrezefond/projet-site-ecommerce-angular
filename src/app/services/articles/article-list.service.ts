@@ -28,7 +28,9 @@ export class ArticleListService {
   // Ajouter un nouvel article
   createArticle(post)
   {
-    return this.http.post(this._url,JSON.stringify(post));
+    console.log(post);
+    post.categorie = ['b','c'];
+    return this.http.post(this._url, post);
   }
 
   // Supprimer un article
